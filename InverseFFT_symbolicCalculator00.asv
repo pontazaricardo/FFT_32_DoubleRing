@@ -1,6 +1,6 @@
 clc;
 
-setSymbolVariables = 1
+setSymbolVariables = 0
 
 if (setSymbolVariables==1)
 
@@ -186,40 +186,392 @@ A31 = a_31_00 + a_31_01*y + a_31_02*y^2 + a_31_03*y^3 + a_31_04*y^4 + a_31_05*y^
 
 % ============= Level 1 - 16 operations =========================
 
-[L01_01_expressionExpanded, L01_01_powerOfZeta, L01_01_inverse,L01_01_inversePowerOfZeta] = rootPowerInverseCalculator(0,0,1)
-A = A00;
-B = A01;
+
+% -------- L01 - C0 ---------
+
+[L01_01_expressionExpanded, L01_01_powerOfZeta, L01_01_inverse,L01_01_inversePowerOfZeta] = rootPowerInverseCalculator(0,0,1);
+A = A00; B = A01;
 inverse = L01_01_inverse;
 powerLevel = 1;
 
-L01_01 = collect(collect(expand(polynomialReduce(expand(A+B),y^32+1)),y)+collect(expand(polynomialReduce(expand(inverse*(A-B)),y^32+1)))*w^powerLevel,w)
-coefficients = coeffs(L01_01,w);
+firstTerm = collect(expand(polynomialReduce(expand(A+B),y^32+1)),y);
+secondTerm = collect(expand(polynomialReduce(expand(inverse*(A-B)),y^32+1)));
+
+L01_01 = collect(firstTerm + secondTerm*w^powerLevel,w)
+%L01_01 = collect(collect(expand(polynomialReduce(expand(A+B),y^32+1)),y)+collect(expand(polynomialReduce(expand(inverse*(A-B)),y^32+1)))*w^powerLevel,w)
+%coefficients = coeffs(L01_01,w);
 
 
+% -------- L01 - C1 ---------
 
-
-[L01_02_expressionExpanded, L01_02_powerOfZeta, L01_02_inverse,L01_02_inversePowerOfZeta] = rootPowerInverseCalculator(1,0,1)
-A = A02;
-B = A03;
+[L01_02_expressionExpanded, L01_02_powerOfZeta, L01_02_inverse,L01_02_inversePowerOfZeta] = rootPowerInverseCalculator(1,0,1);
+A = A02; B = A03;
 inverse = L01_02_inverse;
 powerLevel = 1;
 
-L01_02 = collect(collect(expand(polynomialReduce(expand(A+B),y^32+1)),y)+collect(expand(polynomialReduce(expand(inverse*(A-B)),y^32+1)))*w^powerLevel,w)
-coefficients = coeffs(L01_02,w);
+firstTerm = collect(expand(polynomialReduce(expand(A+B),y^32+1)),y);
+secondTerm = collect(expand(polynomialReduce(expand(inverse*(A-B)),y^32+1)));
+
+L01_02 = collect(firstTerm + secondTerm*w^powerLevel,w)
+%L01_02 = collect(collect(expand(polynomialReduce(expand(A+B),y^32+1)),y)+collect(expand(polynomialReduce(expand(inverse*(A-B)),y^32+1)))*w^powerLevel,w)
+%coefficients = coeffs(L01_02,w);
+
+%coeffs(coefficients(1),y)
+%coeffs(coefficients(2),y)
 
 
+% -------- L01 - C2 ---------
+
+[L01_03_expressionExpanded, L01_03_powerOfZeta, L01_03_inverse,L01_03_inversePowerOfZeta] = rootPowerInverseCalculator(2,0,1);
+A = A04; B = A05;
+inverse = L01_03_inverse;
+powerLevel = 1;
+
+firstTerm = collect(expand(polynomialReduce(expand(A+B),y^32+1)),y);
+secondTerm = collect(expand(polynomialReduce(expand(inverse*(A-B)),y^32+1)));
+
+L01_03 = collect(firstTerm + secondTerm*w^powerLevel,w)
 
 
-[L02_01_expressionExpanded, L02_01_powerOfZeta, L02_01_inverse,L02_01_inversePowerOfZeta] = rootPowerInverseCalculator(0,0,2)
-A = L01_01_inverse;
-B = L01_02_inverse;
+% -------- L01 - C3 ---------
+
+[L01_04_expressionExpanded, L01_04_powerOfZeta, L01_04_inverse,L01_04_inversePowerOfZeta] = rootPowerInverseCalculator(3,0,1)
+A = A06; B = A07;
+inverse = L01_04_inverse;
+powerLevel = 1;
+
+firstTerm = collect(expand(polynomialReduce(expand(A+B),y^32+1)),y);
+secondTerm = collect(expand(polynomialReduce(expand(inverse*(A-B)),y^32+1)));
+
+L01_04 = collect(firstTerm + secondTerm*w^powerLevel,w)
+
+
+% -------- L01 - C4 ---------
+
+[L01_05_expressionExpanded, L01_05_powerOfZeta, L01_05_inverse,L01_05_inversePowerOfZeta] = rootPowerInverseCalculator(4,0,1)
+A = A08; B = A09;
+inverse = L01_05_inverse;
+powerLevel = 1;
+
+firstTerm = collect(expand(polynomialReduce(expand(A+B),y^32+1)),y);
+secondTerm = collect(expand(polynomialReduce(expand(inverse*(A-B)),y^32+1)));
+
+L01_05 = collect(firstTerm + secondTerm*w^powerLevel,w)
+
+
+% -------- L01 - C5 ---------
+
+[L01_06_expressionExpanded, L01_06_powerOfZeta, L01_06_inverse,L01_06_inversePowerOfZeta] = rootPowerInverseCalculator(5,0,1)
+A = A10; B = A11;
+inverse = L01_06_inverse;
+powerLevel = 1;
+
+firstTerm = collect(expand(polynomialReduce(expand(A+B),y^32+1)),y);
+secondTerm = collect(expand(polynomialReduce(expand(inverse*(A-B)),y^32+1)));
+
+L01_06 = collect(firstTerm + secondTerm*w^powerLevel,w)
+
+
+% -------- L01 - C6 ---------
+
+[L01_07_expressionExpanded, L01_07_powerOfZeta, L01_07_inverse,L01_07_inversePowerOfZeta] = rootPowerInverseCalculator(6,0,1)
+A = A12; B = A13;
+inverse = L01_07_inverse;
+powerLevel = 1;
+
+firstTerm = collect(expand(polynomialReduce(expand(A+B),y^32+1)),y);
+secondTerm = collect(expand(polynomialReduce(expand(inverse*(A-B)),y^32+1)));
+
+L01_07 = collect(firstTerm + secondTerm*w^powerLevel,w)
+
+
+% -------- L01 - C7 ---------
+
+[L01_08_expressionExpanded, L01_08_powerOfZeta, L01_08_inverse,L01_08_inversePowerOfZeta] = rootPowerInverseCalculator(7,0,1)
+A = A14; B = A15;
+inverse = L01_08_inverse;
+powerLevel = 1;
+
+firstTerm = collect(expand(polynomialReduce(expand(A+B),y^32+1)),y);
+secondTerm = collect(expand(polynomialReduce(expand(inverse*(A-B)),y^32+1)));
+
+L01_08 = collect(firstTerm + secondTerm*w^powerLevel,w) 
+
+
+% -------- L01 - C8 ---------
+
+[L01_09_expressionExpanded, L01_09_powerOfZeta, L01_09_inverse,L01_09_inversePowerOfZeta] = rootPowerInverseCalculator(8,0,1)
+A = A16; B = A17;
+inverse = L01_09_inverse;
+powerLevel = 1;
+
+firstTerm = collect(expand(polynomialReduce(expand(A+B),y^32+1)),y);
+secondTerm = collect(expand(polynomialReduce(expand(inverse*(A-B)),y^32+1)));
+
+L01_09 = collect(firstTerm + secondTerm*w^powerLevel,w)
+
+
+% -------- L01 - C9 ---------
+
+[L01_10_expressionExpanded, L01_10_powerOfZeta, L01_10_inverse,L01_10_inversePowerOfZeta] = rootPowerInverseCalculator(9,0,1)
+A = A18; B = A19;
+inverse = L01_10_inverse;
+powerLevel = 1;
+
+firstTerm = collect(expand(polynomialReduce(expand(A+B),y^32+1)),y);
+secondTerm = collect(expand(polynomialReduce(expand(inverse*(A-B)),y^32+1)));
+
+L01_10 = collect(firstTerm + secondTerm*w^powerLevel,w)
+
+
+% -------- L01 - C10 ---------
+
+[L01_11_expressionExpanded, L01_11_powerOfZeta, L01_11_inverse,L01_11_inversePowerOfZeta] = rootPowerInverseCalculator(10,0,1)
+A = A20; B = A21;
+inverse = L01_11_inverse;
+powerLevel = 1;
+
+firstTerm = collect(expand(polynomialReduce(expand(A+B),y^32+1)),y);
+secondTerm = collect(expand(polynomialReduce(expand(inverse*(A-B)),y^32+1)));
+
+L01_11 = collect(firstTerm + secondTerm*w^powerLevel,w)
+
+% -------- L01 - C11 ---------
+
+[L01_12_expressionExpanded, L01_12_powerOfZeta, L01_12_inverse,L01_12_inversePowerOfZeta] = rootPowerInverseCalculator(11,0,1)
+A = A22; B = A23;
+inverse = L01_12_inverse;
+powerLevel = 1;
+
+firstTerm = collect(expand(polynomialReduce(expand(A+B),y^32+1)),y);
+secondTerm = collect(expand(polynomialReduce(expand(inverse*(A-B)),y^32+1)));
+
+L01_12 = collect(firstTerm + secondTerm*w^powerLevel,w)
+
+
+% -------- L01 - C12 ---------
+
+[L01_13_expressionExpanded, L01_13_powerOfZeta, L01_13_inverse,L01_13_inversePowerOfZeta] = rootPowerInverseCalculator(12,0,1)
+A = A24; B = A25;
+inverse = L01_13_inverse;
+powerLevel = 1;
+
+firstTerm = collect(expand(polynomialReduce(expand(A+B),y^32+1)),y);
+secondTerm = collect(expand(polynomialReduce(expand(inverse*(A-B)),y^32+1)));
+
+L01_13 = collect(firstTerm + secondTerm*w^powerLevel,w)
+
+
+% -------- L01 - C13 ---------
+
+[L01_14_expressionExpanded, L01_14_powerOfZeta, L01_14_inverse,L01_14_inversePowerOfZeta] = rootPowerInverseCalculator(13,0,1)
+A = A26; B = A27;
+inverse = L01_14_inverse;
+powerLevel = 1;
+
+firstTerm = collect(expand(polynomialReduce(expand(A+B),y^32+1)),y);
+secondTerm = collect(expand(polynomialReduce(expand(inverse*(A-B)),y^32+1)));
+
+L01_14 = collect(firstTerm + secondTerm*w^powerLevel,w)
+
+
+% -------- L01 - C14 ---------
+
+[L01_15_expressionExpanded, L01_15_powerOfZeta, L01_15_inverse,L01_15_inversePowerOfZeta] = rootPowerInverseCalculator(14,0,1)
+A = A28; B = A29;
+inverse = L01_15_inverse;
+powerLevel = 1;
+
+firstTerm = collect(expand(polynomialReduce(expand(A+B),y^32+1)),y);
+secondTerm = collect(expand(polynomialReduce(expand(inverse*(A-B)),y^32+1)));
+
+L01_15 = collect(firstTerm + secondTerm*w^powerLevel,w)
+
+
+% -------- L01 - C16 ---------
+
+[L01_16_expressionExpanded, L01_16_powerOfZeta, L01_16_inverse,L01_16_inversePowerOfZeta] = rootPowerInverseCalculator(15,0,1)
+A = A30; B = A31;
+inverse = L01_16_inverse;
+powerLevel = 1;
+
+firstTerm = collect(expand(polynomialReduce(expand(A+B),y^32+1)),y);
+secondTerm = collect(expand(polynomialReduce(expand(inverse*(A-B)),y^32+1)));
+
+L01_16 = collect(firstTerm + secondTerm*w^powerLevel,w)
+
+disp('========== Level 02 ============')
+
+% ============= Level 2 - 8 operations =========================
+
+% -------- L02 - C0^2 ---------
+
+[L02_01_expressionExpanded, L02_01_powerOfZeta, L02_01_inverse,L02_01_inversePowerOfZeta] = rootPowerInverseCalculator(0,0,2);
+A = L01_01; B = L01_02;
 inverse = L02_01_inverse;
 powerLevel = 2;
 
-L02_01 = collect(collect(expand(polynomialReduce(expand(A+B),y^32+1)),y)+collect(expand(polynomialReduce(expand(inverse*(A-B)),y^32+1)))*w^powerLevel,w)
-coefficients = coeffs(L02_01,w);
+firstTerm = collect(expand(polynomialReduce(expand(A+B),y^32+1)),y);
+secondTerm = collect(expand(polynomialReduce(expand(inverse*(A-B)),y^32+1)));
+
+L02_01 = collect(firstTerm + secondTerm*w^powerLevel,w)
+
+% -------- L02 - C2^2 ---------
+
+[L02_02_expressionExpanded, L02_02_powerOfZeta, L02_02_inverse,L02_02_inversePowerOfZeta] = rootPowerInverseCalculator(2,0,2);
+A = L01_03; B = L01_04;
+inverse = L02_02_inverse;
+powerLevel = 2;
+
+firstTerm = collect(expand(polynomialReduce(expand(A+B),y^32+1)),y);
+secondTerm = collect(expand(polynomialReduce(expand(inverse*(A-B)),y^32+1)));
+
+L02_02 = collect(firstTerm + secondTerm*w^powerLevel,w)
+
+% -------- L02 - C4^2 ---------
+
+[L02_03_expressionExpanded, L02_03_powerOfZeta, L02_03_inverse,L02_03_inversePowerOfZeta] = rootPowerInverseCalculator(4,0,2);
+A = L01_05; B = L01_06;
+inverse = L02_03_inverse;
+powerLevel = 2;
+
+firstTerm = collect(expand(polynomialReduce(expand(A+B),y^32+1)),y);
+secondTerm = collect(expand(polynomialReduce(expand(inverse*(A-B)),y^32+1)));
+
+L02_03 = collect(firstTerm + secondTerm*w^powerLevel,w)
+
+% -------- L02 - C6^2 ---------
+
+[L02_04_expressionExpanded, L02_04_powerOfZeta, L02_04_inverse,L02_04_inversePowerOfZeta] = rootPowerInverseCalculator(6,0,2);
+A = L01_07; B = L01_08;
+inverse = L02_04_inverse;
+powerLevel = 2;
+
+firstTerm = collect(expand(polynomialReduce(expand(A+B),y^32+1)),y);
+secondTerm = collect(expand(polynomialReduce(expand(inverse*(A-B)),y^32+1)));
+
+L02_04 = collect(firstTerm + secondTerm*w^powerLevel,w)
+
+% -------- L02 - C8^2 ---------
+
+[L02_05_expressionExpanded, L02_05_powerOfZeta, L02_05_inverse,L02_05_inversePowerOfZeta] = rootPowerInverseCalculator(8,0,2);
+A = L01_09; B = L01_10;
+inverse = L02_05_inverse;
+powerLevel = 2;
+
+firstTerm = collect(expand(polynomialReduce(expand(A+B),y^32+1)),y);
+secondTerm = collect(expand(polynomialReduce(expand(inverse*(A-B)),y^32+1)));
+
+L02_05 = collect(firstTerm + secondTerm*w^powerLevel,w)
+
+% -------- L02 - C10^2 ---------
+
+[L02_06_expressionExpanded, L02_06_powerOfZeta, L02_06_inverse,L02_06_inversePowerOfZeta] = rootPowerInverseCalculator(10,0,2);
+A = L01_11; B = L01_12;
+inverse = L02_06_inverse;
+powerLevel = 2;
+
+firstTerm = collect(expand(polynomialReduce(expand(A+B),y^32+1)),y);
+secondTerm = collect(expand(polynomialReduce(expand(inverse*(A-B)),y^32+1)));
+
+L02_06 = collect(firstTerm + secondTerm*w^powerLevel,w)
+
+% -------- L02 - C12^2 ---------
+
+[L02_07_expressionExpanded, L02_07_powerOfZeta, L02_07_inverse,L02_07_inversePowerOfZeta] = rootPowerInverseCalculator(12,0,2);
+A = L01_13; B = L01_14;
+inverse = L02_07_inverse;
+powerLevel = 2;
+
+firstTerm = collect(expand(polynomialReduce(expand(A+B),y^32+1)),y);
+secondTerm = collect(expand(polynomialReduce(expand(inverse*(A-B)),y^32+1)));
+
+L02_07 = collect(firstTerm + secondTerm*w^powerLevel,w)
+
+% -------- L02 - C14^2 ---------
+
+[L02_08_expressionExpanded, L02_08_powerOfZeta, L02_08_inverse,L02_08_inversePowerOfZeta] = rootPowerInverseCalculator(14,0,2);
+A = L01_15; B = L01_16;
+inverse = L02_08_inverse;
+powerLevel = 2;
+
+firstTerm = collect(expand(polynomialReduce(expand(A+B),y^32+1)),y);
+secondTerm = collect(expand(polynomialReduce(expand(inverse*(A-B)),y^32+1)));
+
+L02_08 = collect(firstTerm + secondTerm*w^powerLevel,w)
+
+disp('========== Level 03 ============')
+
+% ============= Level 3 - 4 operations =========================
+
+% -------- L03 - C0^4 ---------
+
+[L03_01_expressionExpanded, L03_01_powerOfZeta, L03_01_inverse,L03_01_inversePowerOfZeta] = rootPowerInverseCalculator(0,0,4);
+A = L02_01; B = L02_02;
+inverse = L03_01_inverse;
+powerLevel = 4;
+
+firstTerm = collect(expand(polynomialReduce(expand(A+B),y^32+1)),y);
+secondTerm = collect(expand(polynomialReduce(expand(inverse*(A-B)),y^32+1)));
+
+L03_01 = collect(firstTerm + secondTerm*w^powerLevel,w)
+
+% -------- L03 - C4^4 ---------
+
+[L03_02_expressionExpanded, L03_02_powerOfZeta, L03_02_inverse,L03_02_inversePowerOfZeta] = rootPowerInverseCalculator(4,0,4);
+A = L02_03; B = L02_04;
+inverse = L03_02_inverse;
+powerLevel = 4;
+
+firstTerm = collect(expand(polynomialReduce(expand(A+B),y^32+1)),y);
+secondTerm = collect(expand(polynomialReduce(expand(inverse*(A-B)),y^32+1)));
+
+L03_02 = collect(firstTerm + secondTerm*w^powerLevel,w)
+
+% -------- L03 - C8^4 ---------
+
+[L03_03_expressionExpanded, L03_03_powerOfZeta, L03_03_inverse,L03_03_inversePowerOfZeta] = rootPowerInverseCalculator(8,0,4);
+A = L02_05; B = L02_06;
+inverse = L03_03_inverse;
+powerLevel = 4;
+
+firstTerm = collect(expand(polynomialReduce(expand(A+B),y^32+1)),y);
+secondTerm = collect(expand(polynomialReduce(expand(inverse*(A-B)),y^32+1)));
+
+L03_03 = collect(firstTerm + secondTerm*w^powerLevel,w)
+
+% -------- L03 - C12^4 ---------
+
+[L03_04_expressionExpanded, L03_04_powerOfZeta, L03_04_inverse,L03_04_inversePowerOfZeta] = rootPowerInverseCalculator(12,0,4);
+A = L02_07; B = L02_08;
+inverse = L03_01_inverse;
+powerLevel = 4;
+
+firstTerm = collect(expand(polynomialReduce(expand(A+B),y^32+1)),y);
+secondTerm = collect(expand(polynomialReduce(expand(inverse*(A-B)),y^32+1)));
+
+L03_01 = collect(firstTerm + secondTerm*w^powerLevel,w)
 
 
 
-coeffs(coefficients(1),y)
-coeffs(coefficients(2),y)
+
+
+
+
+
+
+
+
+
+% [L02_01_expressionExpanded, L02_01_powerOfZeta, L02_01_inverse,L02_01_inversePowerOfZeta] = rootPowerInverseCalculator(0,0,2)
+% A = L01_01;
+% B = L01_02;
+% inverse = L02_01_inverse;
+% powerLevel = 2;
+% 
+% L02_01 = collect(collect(expand(polynomialReduce(expand(A+B),y^32+1)),y)+collect(expand(polynomialReduce(expand(inverse*(A-B)),y^32+1)))*w^powerLevel,w)
+% coefficients = coeffs(L02_01,w);
+% 
+% coeffs(coefficients(1),y)
+% coeffs(coefficients(2),y)
+% coeffs(coefficients(3),y)
