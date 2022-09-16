@@ -1,6 +1,6 @@
 clc;
 
-setSymbolVariables = 0
+setSymbolVariables = 1
 
 if (setSymbolVariables==1)
 
@@ -599,15 +599,44 @@ L05_01 = collect(firstTerm + secondTerm*w^powerLevel,w)
 
 coefficients = coeffs(L05_01,w);
 
-coeffs(coefficients(1),y).'
-coeffs(coefficients(2),y).'
-coeffs(coefficients(3),y).'
-coeffs(coefficients(4),y).'
-coeffs(coefficients(5),y).'
-coeffs(coefficients(6),y).'
-coeffs(coefficients(7),y).'
-coeffs(coefficients(8),y).'
-coeffs(coefficients(9),y).'
+disp('============= Final Inverse FFT coefficients ============= ')
+
+coeffs_w00 = coeffs(coefficients(1),y).'
+coeffs_w01 = coeffs(coefficients(2),y).'
+coeffs_w02 = coeffs(coefficients(3),y).'
+coeffs_w03 = coeffs(coefficients(4),y).'
+coeffs_w04 = coeffs(coefficients(5),y).'
+coeffs_w05 = coeffs(coefficients(6),y).'
+coeffs_w06 = coeffs(coefficients(7),y).'
+coeffs_w07 = coeffs(coefficients(8),y).'
+coeffs_w08 = coeffs(coefficients(9),y).'
+coeffs_w09 = coeffs(coefficients(10),y).'
+
+coeffs_w10 = coeffs(coefficients(11),y).'
+coeffs_w11 = coeffs(coefficients(12),y).'
+coeffs_w12 = coeffs(coefficients(13),y).'
+coeffs_w13 = coeffs(coefficients(14),y).'
+coeffs_w14 = coeffs(coefficients(15),y).'
+coeffs_w15 = coeffs(coefficients(16),y).'
+coeffs_w16 = coeffs(coefficients(17),y).'
+coeffs_w17 = coeffs(coefficients(18),y).'
+coeffs_w18 = coeffs(coefficients(19),y).'
+coeffs_w19 = coeffs(coefficients(20),y).'
+
+coeffs_w20 = coeffs(coefficients(21),y).'
+coeffs_w21 = coeffs(coefficients(22),y).'
+coeffs_w22 = coeffs(coefficients(23),y).'
+coeffs_w23 = coeffs(coefficients(24),y).'
+coeffs_w24 = coeffs(coefficients(25),y).'
+coeffs_w25 = coeffs(coefficients(26),y).'
+coeffs_w26 = coeffs(coefficients(27),y).'
+coeffs_w27 = coeffs(coefficients(28),y).'
+coeffs_w28 = coeffs(coefficients(29),y).'
+coeffs_w29 = coeffs(coefficients(30),y).'
+
+coeffs_w30 = coeffs(coefficients(31),y).'
+coeffs_w31 = coeffs(coefficients(32),y).'
+
 
 % [L02_01_expressionExpanded, L02_01_powerOfZeta, L02_01_inverse,L02_01_inversePowerOfZeta] = rootPowerInverseCalculator(0,0,2)
 % A = L01_01;

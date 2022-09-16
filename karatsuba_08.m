@@ -1,6 +1,7 @@
 function result = karatsuba_08(f,g)
     % Input: f, g of size 8 (polynomial a0+a1t+...+a7t^7 = [a0,a1,..,a7]
     % Output: product f*g (a0+a1t+...+a_13t^13+a_14t^14) = [a0,a1,...,a_13,a_14]
+    % Output size(1,15)
     
     A0 = f([1:4]);
     A1 = f([5:8]);
