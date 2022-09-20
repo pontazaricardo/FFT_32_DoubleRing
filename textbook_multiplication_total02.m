@@ -1,6 +1,9 @@
 function result = textbook_multiplication_total02(f,g)
     % Input: f, g of dimension n (a0+a1x+...+a_{n-1}x^{n-1}) = [a0,a1,...,a_{n-1}]
     % Output: h = f*g
+
+    % NOTE: Version 02 can multiply polynomials of different size, unlike
+    % version 01 where they must be of the same size
     
     dimensionF = size(f,2);
     dimensionG = size(g,2);

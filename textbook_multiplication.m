@@ -1,5 +1,8 @@
 function h_result = textbook_multiplication(f,g)
     
+    % Input: f,g arrays of same size
+    % Output: h = f*g, where size(h) = (1,sizeOfArrays*2);
+
     sizeOfArrays = size(f,2);
     temp_result = zeros(1,sizeOfArrays*2);
 

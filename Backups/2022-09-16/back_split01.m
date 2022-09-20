@@ -16,7 +16,7 @@ function f_11_1536_out = back_split01(f_split01_in)
         for i0=0:511
             index = mod(171*3*i0 + 2*512*i1,1536);
 
-            f_11_1536_out(index+1) = f_11_1536_out(index+1)+f_split01_in(i1+1, i0+1);
+            f_11_1536_out(index+1) = f_split01_in(i1+1, i0+1);
 
         end
     end
