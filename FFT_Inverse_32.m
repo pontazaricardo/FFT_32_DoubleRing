@@ -14,6 +14,10 @@ function f_fft_inverse_output = FFT_Inverse_32(F00, F01, F02, F03, F04, F05, F06
 
     %modulo = 2048;
     modulo = 65536;
+    %modulo = 131072;
+
+    %debug
+    %modulo = 0; %TODO: DELETE
 
     f_fft_inverse_output(1,:) = Inverse_FFT_32_00(F00, F01, F02, F03, F04, F05, F06, F07, F08, F09, F10, F11, F12, F13, F14, F15, F16, F17, F18, F19, F20, F21, F22, F23, F24, F25, F26, F27, F28, F29, F30, F31, modulo);
     f_fft_inverse_output(2,:) = Inverse_FFT_32_01(F00, F01, F02, F03, F04, F05, F06, F07, F08, F09, F10, F11, F12, F13, F14, F15, F16, F17, F18, F19, F20, F21, F22, F23, F24, F25, F26, F27, F28, F29, F30, F31, modulo);

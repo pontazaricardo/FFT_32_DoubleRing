@@ -1,7 +1,7 @@
 % a_ww_yy where ww is power of w, yy is power of y
 clc;
 
-setSymbolVariables = 1
+setSymbolVariables = 0
 
 if (setSymbolVariables==1)
 
